@@ -1,0 +1,33 @@
+/*
+  Token CONTRACT, not token values.
+
+  Every client site defines its own values for these variables based on its
+  DESIGN.md color family / font category. The names stay consistent across
+  clients so the motion/primitive utilities keep working; the values never do.
+*/
+
+:root {
+  /* Color — name by role, not by hue, so "accent" can be orange for one client
+     and teal for the next without touching any component code. */
+  --color-bg: ;
+  --color-surface: ;
+  --color-text-primary: ;
+  --color-text-muted: ;
+  --color-accent: ;
+  --color-accent-contrast: ;
+
+  /* Type — set per client from the chosen font category in DESIGN.md */
+  --font-display: ;
+  --font-body: ;
+  --font-mono: ;
+
+  /* Spacing scale — override the multiplier, not each value, to keep rhythm
+     consistent while density varies (maximalist vs. minimalist clients) */
+  --space-unit: 8px;
+
+  /* Motion — timing tokens referenced by foundry/src/motion utilities */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-standard: 400ms;
+  --duration-deliberate: 900ms;
+}
