@@ -5,14 +5,27 @@ repo. It encodes how LOVAN builds sites, independent of which client this is.
 
 ## Before writing any code
 
+Invoke the installed skills in this order — each one narrows what the next one does:
+
 1. Read `DESIGN.md` in this repo's root. It contains this specific client's aesthetic
    direction, decided from the discovery call. Do not start designing until you've
    read it — if it's still blank, stop and say so rather than guessing.
-2. Use the `frontend-design` skill for any new page, component, or interface work.
-   Commit to the aesthetic direction named in DESIGN.md; don't hedge across multiple
-   directions.
-3. Check `foundry/src/motion/` for existing animation utilities before writing new
-   GSAP/Framer Motion code from scratch — reuse the mechanics, not the styling.
+2. Use `ui-ux-pro-max` to pull concrete starting points — a color palette, font
+   pairing, and layout/UX guidelines tuned to the client's industry and the
+   aesthetic direction from DESIGN.md. Treat its output as raw material, not a
+   final decision.
+3. Use `frontend-design` to execute on that material with a real point of view.
+   Its anti-generic rules take precedence over anything `ui-ux-pro-max` suggested
+   that leans safe or default (e.g. Inter/system fonts, an evenly-balanced palette,
+   a predictable grid) — commit to the DESIGN.md direction rather than hedging
+   back toward whichever option looks most "professional."
+4. For any animation or motion work, use `gsap-skills` for correct GSAP API usage
+   (timelines, ScrollTrigger, cleanup on unmount) and check `foundry/src/motion/`
+   for existing utilities before writing new animation code from scratch — reuse
+   the mechanics, not the styling.
+5. Only use the `shadcn` skill if this specific client project has shadcn
+   initialized (`components.json` present). It's a per-client decision, not a
+   default — most LOVAN builds won't need it.
 
 ## Stack conventions
 
